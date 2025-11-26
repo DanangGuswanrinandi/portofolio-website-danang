@@ -33,7 +33,7 @@ Error generating stack: `+o.message+`
                   hover-stop-animation\r
 \r
                   animate-[pulse-glow-blue_2.5s_ease-in-out_infinite]\r
-                `}),E.jsx("img",{src:"/assets/coreldraw.png",className:`\r
+                `}),E.jsx("img",{src:"public/assets/coreldraw.png",className:`\r
                   absolute top-80 right-20 w-35 opacity-80 \r
                   transition-all duration-300\r
                   rotate-10\r
