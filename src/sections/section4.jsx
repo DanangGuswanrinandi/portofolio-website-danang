@@ -123,11 +123,11 @@ export default function Section4() {
         <div ref={itemRef} className="flex flex-col items-center shrink-0">
           <Carousel
             items={[
-              { id:1, image:"/assets/Mataf 25 Horizon.png" },
-              { id:2, image:"/assets/DFG 17 Logo CL_Horizon.png" },
-              { id:3, image:"/assets/Logo podcast 2.png" },
-              { id:4, image:"/assets/lOGO ANGSA VER.png" },
-              { id:5, image:"/assets/logo dfg 16.png" }
+              { id:1, image:"public/assets/Mataf 25 Horizon.png" },
+              { id:2, image:"public/assets/DFG 17 Logo CL_Horizon.png" },
+              { id:3, image:"public/assets/Logo podcast 2.png" },
+              { id:4, image:"public/assets/lOGO ANGSA VER.png" },
+              { id:5, image:"public/assets/logo dfg 16.png" }
             ]}
             baseWidth={200}
             autoplay
@@ -146,11 +146,11 @@ export default function Section4() {
         <div className="flex flex-col items-center shrink-0">
           <Carousel
             items={[
-              { id:1, image:"/assets/Banner JJS CMYK rev.jpg" },
-              { id:2, image:"/assets/Banner digital simus.jpg" },
-              { id:3, image:"/assets/BG DIGITAL.jpg" },
-              { id:4, image:"/assets/Banner digital milad.jpg" },
-              { id:5, image:"/assets/Banner digitalSSSSS.jpg" },
+              { id:1, image:"public/assets/Banner JJS CMYK rev.jpg" },
+              { id:2, image:"public/assets/Banner digital simus.jpg" },
+              { id:3, image:"public/assets/BG DIGITAL.jpg" },
+              { id:4, image:"public/assets/Banner digital milad.jpg" },
+              { id:5, image:"public/assets/Banner digitalSSSSS.jpg" },
             ]}
             baseWidth={200}
             autoplay
@@ -168,11 +168,11 @@ export default function Section4() {
         <div className="flex flex-col items-center shrink-0">
           <Carousel
             items={[
-              { id:1, image:"/assets/pamflet desain.jpg" },
-              { id:2, image:"/assets/HBD Danang.jpg" },
-              { id:3, image:"/assets/Poster MnG.jpg" },
-              { id:4, image:"/assets/Pormawa story (1).jpg" },
-              { id:5, image:"/assets/pamflet 22.png" },
+              { id:1, image:"public/assets/pamflet desain.jpg" },
+              { id:2, image:"public/assets/HBD Danang.jpg" },
+              { id:3, image:"public/assets/Poster MnG.jpg" },
+              { id:4, image:"public/assets/Pormawa story (1).jpg" },
+              { id:5, image:"public/assets/pamflet 22.png" },
             ]}
             baseWidth={200}
             autoplay
@@ -189,11 +189,11 @@ export default function Section4() {
         <div className="flex flex-col items-center shrink-0">
           <Carousel
             items={[
-              { id:1, image:"/assets/STICKER KI.png" },
-              { id:2, image:"/assets/Sticker Gresik Sumpek.png" },
-              { id:3, image:"/assets/Sticker DFG XVI.png" },
-              { id:3, image:"/assets/Sticker Mataf 1.png" },
-              { id:3, image:"/assets/Sticker Mataf 2.png" },
+              { id:1, image:"public/assets/STICKER KI.png" },
+              { id:2, image:"public/assets/Sticker Gresik Sumpek.png" },
+              { id:3, image:"public/assets/Sticker DFG XVI.png" },
+              { id:3, image:"public/assets/Sticker Mataf 1.png" },
+              { id:3, image:"public/assets/Sticker Mataf 2.png" },
             ]}
             baseWidth={200}
             autoplay
@@ -208,11 +208,11 @@ export default function Section4() {
         <div className="flex flex-col items-center shrink-0">
           <Carousel
             items={[
-              { id:1, image:"/assets/FEED PTI 4 COVER.jpg" },
-              { id:2, image:"/assets/Feed KI.jpg" },
-              { id:3, image:"/assets/feed 3.jpg" },
-              { id:4, image:"/assets/mataf h3 (2).jpg" },
-              { id:5, image:"/assets/Feed PV1.jpg" },
+              { id:1, image:"public/assets/FEED PTI 4 COVER.jpg" },
+              { id:2, image:"public/assets/Feed KI.jpg" },
+              { id:3, image:"public/assets/feed 3.jpg" },
+              { id:4, image:"public/assets/mataf h3 (2).jpg" },
+              { id:5, image:"public/assets/Feed PV1.jpg" },
             ]}
             baseWidth={200}
             autoplay

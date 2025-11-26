@@ -45,7 +45,7 @@ export default function Section2() {
                   "
                 >
                   <img
-                    src="/assets/IMG_1560.JPG"
+                    src="public/assets/IMG_1560.JPG"
                     className="w-150 h-120 rounded-xl object-cover"
                     style={{
                       WebkitMaskImage: `
