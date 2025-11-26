@@ -119,7 +119,7 @@ export default function Section1() {
           <Col md="6" className="hidden md:flex justify-end items-end h-full pb-0 pointer-events-auto">
           {/* Logo Photoshop */}
               <img
-                src="danangguswanrinandi.github.io/assets/photoshop.png"
+                src="danangguswanrinandi.github.io/portofolio-website-danang/assets/photoshop.png"
                 className="
                   absolute bottom-85 right-100 w-40 opacity-80 
                   transition-all duration-300
