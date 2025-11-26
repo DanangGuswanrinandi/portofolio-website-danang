@@ -21,7 +21,7 @@ Error generating stack: `+o.message+`
                              items-center justify-center text-green-400 hover:bg-white/20 \r
                              transition-all duration-300 text-2xl`,children:E.jsx(EM,{})}),E.jsx("a",{href:"https://instagram.com/danang_guswanrinandi",target:"_blank",className:`w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex \r
                              items-center justify-center text-pink-400 hover:bg-white/20 \r
-                             transition-all duration-300 text-2xl`,children:E.jsx(TM,{})})]})]})]}),E.jsxs(di,{md:"6",className:"hidden md:flex justify-end items-end h-full pb-0 pointer-events-auto",children:[E.jsx("img",{src:"danangguswanrinandi.github.io/assets/photoshop.png",className:`\r
+                             transition-all duration-300 text-2xl`,children:E.jsx(TM,{})})]})]})]}),E.jsxs(di,{md:"6",className:"hidden md:flex justify-end items-end h-full pb-0 pointer-events-auto",children:[E.jsx("img",{src:"danangguswanrinandi.github.io/portofolio-website-danang/assets/photoshop.png",className:`\r
                   absolute bottom-85 right-100 w-40 opacity-80 \r
                   transition-all duration-300\r
                   -rotate-30\r
