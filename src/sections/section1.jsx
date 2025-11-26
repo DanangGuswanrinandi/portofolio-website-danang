@@ -137,7 +137,7 @@ export default function Section1() {
             
              {/* Logo Coreldraw*/}
               <img
-                src="public/assets/coreldraw.png"
+                src="/assets/coreldraw.png"
                 className="
                   absolute top-80 right-20 w-35 opacity-80 
                   transition-all duration-300
@@ -168,7 +168,7 @@ export default function Section1() {
                 "
               />
             <img
-              src="public/assets/Foto Danang.png"
+              src="/assets/Foto Danang.png"
               alt="Foto Saya"
               className="rounded-lg w-md-full h-auto max-h-[80vh] object-cover z-10 pointer-events-none"
             />
