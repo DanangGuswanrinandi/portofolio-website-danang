@@ -21,7 +21,7 @@ Error generating stack: `+o.message+`
                              items-center justify-center text-green-400 hover:bg-white/20 \r
                              transition-all duration-300 text-2xl`,children:E.jsx(EM,{})}),E.jsx("a",{href:"https://instagram.com/danang_guswanrinandi",target:"_blank",className:`w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex \r
                              items-center justify-center text-pink-400 hover:bg-white/20 \r
-                             transition-all duration-300 text-2xl`,children:E.jsx(TM,{})})]})]})]}),E.jsxs(di,{md:"6",className:"hidden md:flex justify-end items-end h-full pb-0 pointer-events-auto",children:[E.jsx("img",{src:"public/assets/photoshop.png",className:`\r
+                             transition-all duration-300 text-2xl`,children:E.jsx(TM,{})})]})]})]}),E.jsxs(di,{md:"6",className:"hidden md:flex justify-end items-end h-full pb-0 pointer-events-auto",children:[E.jsx("img",{src:"/photoshop.png",className:`\r
                   absolute bottom-85 right-100 w-40 opacity-80 \r
                   transition-all duration-300\r
                   -rotate-30\r
@@ -33,7 +33,7 @@ Error generating stack: `+o.message+`
                   hover-stop-animation\r
 \r
                   animate-[pulse-glow-blue_2.5s_ease-in-out_infinite]\r
-                `}),E.jsx("img",{src:"public/assets/coreldraw.png",className:`\r
+                `}),E.jsx("img",{src:"/coreldraw.png",className:`\r
                   absolute top-80 right-20 w-35 opacity-80 \r
                   transition-all duration-300\r
                   rotate-10\r
