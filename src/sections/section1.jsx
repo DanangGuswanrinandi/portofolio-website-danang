@@ -119,7 +119,7 @@ export default function Section1() {
           <Col md="6" className="hidden md:flex justify-end items-end h-full pb-0 pointer-events-auto">
           {/* Logo Photoshop */}
               <img
-                src="public/assets/photoshop.png"
+                src="/photoshop.png"
                 className="
                   absolute bottom-85 right-100 w-40 opacity-80 
                   transition-all duration-300
@@ -137,7 +137,7 @@ export default function Section1() {
             
              {/* Logo Coreldraw*/}
               <img
-                src="public/assets/coreldraw.png"
+                src="/coreldraw.png"
                 className="
                   absolute top-80 right-20 w-35 opacity-80 
                   transition-all duration-300
