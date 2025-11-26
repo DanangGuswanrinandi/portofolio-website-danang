@@ -50,7 +50,7 @@ export default function Section3() {
                             shadow-[0_8px_30px_rgba(0,0,0,0.25)]
                             ">
               <img 
-                src="src/assets/coreldraw.png" 
+                src="/assets/coreldraw.png" 
                 className="w-auto h-18 mb-4 object-contain hover:scale-150
                   hover:brightness-150
                   hover:drop-shadow-[0_0_12px_#00ff88] transition-all
@@ -75,7 +75,7 @@ export default function Section3() {
                             shadow-[0_8px_30px_rgba(0,0,0,0.25)]
                             ">
               <img 
-                src="src/assets/photoshop.png" 
+                src="/assets/photoshop.png" 
                 className="w-auto h-18 mb-4 object-contain hover:scale-150
                   hover:brightness-150
                   hover:drop-shadow-[0_0_12px_#0066ff] transition-all
@@ -98,7 +98,7 @@ export default function Section3() {
                             flex flex-col items-center justify-center
                             shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
               <img 
-                src="src/assets/figma.png" 
+                src="/assets/figma.png" 
                 className="w-auto h-22 mb-3 object-contain hover:scale-150
                   hover:brightness-120
                   hover:drop-shadow-[0_0_12px_#FF7262] transition-all
@@ -200,7 +200,7 @@ export default function Section3() {
                 className="w-auto h-22 mb-3 object-containtransition-all duration-300
                 hover:scale-150 hover:brightness-125
                 hover:drop-shadow-[0_0_15px_#0066ff]"   
-                src="src/assets/Visual.png" 
+                src="/assets/Visual.png" 
                 alt="Viscode Icon" />      
 
             {/* PERCENTAGE */}
