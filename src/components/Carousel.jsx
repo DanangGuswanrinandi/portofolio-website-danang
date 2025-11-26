@@ -9,7 +9,7 @@ const GAP = 16;
 const SPRING_OPTIONS = { type: 'spring', stiffness: 300, damping: 30 };
 
 export default function Carousel({
-  items = DEFAULT_ITEMS,  // <-- items eksternal dipakai langsung
+  items = DEFAULT_ITEMS,
   baseWidth = 200,
   autoplay = false,
   autoplayDelay = 3000,
@@ -28,6 +28,7 @@ export default function Carousel({
   const [isResetting, setIsResetting] = useState(false);
 
   const containerRef = useRef(null);
+
   useEffect(() => {
     if (pauseOnHover && containerRef.current) {
       const el = containerRef.current;
@@ -40,7 +41,6 @@ export default function Carousel({
     }
   }, [pauseOnHover]);
 
-  // autoplay
   useEffect(() => {
     if (autoplay && (!pauseOnHover || !isHovered)) {
       const timer = setInterval(() => {
@@ -117,31 +117,38 @@ export default function Carousel({
           ];
           const rotateY = useTransform(x, range, [90, 0, -90], { clamp: false });
 
+          const isImageCard = !!item.image;
+
           return (
             <motion.div
               key={index}
-              className="relative shrink-0 flex flex-col justify-end 
-              overflow-hidden cursor-grab active:cursor-grabbing 
-              rounded-xl border border-[#222]"
+              className={`
+                relative shrink-0 flex flex-col justify-end 
+                overflow-hidden cursor-grab active:cursor-grabbing 
+                rounded-xl border 
+                ${isImageCard ? "border-white/20 shadow-lg shadow-black/40 backdrop-blur-xl" : "border-[#222]"}
+              `}
               style={{
                 width: itemWidth,
                 height: "150px",
-                rotateY: rotateY,
-                background: item.image ? "white" : "#222"
+                rotateY,
+                background: isImageCard
+                  ? "rgba(255,255,255,0.08)"  // Glassmorphism
+                  : "#222"
               }}
               transition={effectiveTransition}
             >
-              {item.image && (
+              {isImageCard && (
                 <div className="w-full h-full flex items-center justify-center">
                   <img
                     src={item.image}
                     alt={item.title ?? ""}
-                    className="object-contain w-full h-full p-6"
+                    className="object-contain w-full h-full p-4 drop-shadow-2xl"
                   />
                 </div>
               )}
 
-              {!item.image && (
+              {!isImageCard && (
                 <div className="p-5 z-10">
                   <div className="font-black text-lg text-white">{item.title}</div>
                   <p className="text-sm text-white">{item.description}</p>

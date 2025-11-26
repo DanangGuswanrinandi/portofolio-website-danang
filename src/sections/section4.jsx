@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import Carousel from "../components/Carousel";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { motion } from "framer-motion";
+import BlurText from "../components/BlurText";
 
 export default function Section4() {
   const scrollRef = useRef(null);
@@ -26,6 +27,10 @@ export default function Section4() {
     setCanScrollLeft(el.scrollLeft > 0);
     setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth);
   };
+
+  const handleAnimationComplete = () => {
+  console.log('Animation completed!');
+};
 
   const scrollLeft = () => {
     if (itemWidth > 0) {
@@ -60,63 +65,72 @@ export default function Section4() {
   }, []);
 
   return (
-    <div className="min-h-screen px-20 relative bg-linear-to-b from-[#181025] via-[#2a1d41] to-[#7a54ff20] py-20">
+    <div className="min-h-screen px-20 relative bg-linear-to-b from-[#181025] via-[#2a1d41] to-[#7a54ff20] py-30">
 
       {/* TITLE */}
-      <div className="text-left w-full mb-5 mt-15 px-4">
-        <h2 className="text-white text-3xl font-bold">My Work</h2>
-        <p className="text-white/70 text-lg mt-1">Recent Project</p>
+      <div className="text-center mb-5 mt-15 px-4">
+        <BlurText
+          text="My Work"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={handleAnimationComplete}
+          className="text-white fw-bold text-6xl justify-center"
+        />
+        <BlurText
+          text="Lastest Project"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={handleAnimationComplete}
+          className="text-white/70 text-lg mt-1 justify-center"
+        />
       </div>
 
-      {/* ==== LEFT ARROW ==== */}
+      {/* LEFT ARROW */}
       {canScrollLeft && (
         <motion.button
           onClick={scrollLeft}
-          initial={{ opacity: 0, scale: 0.6 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
           className="
-            absolute left-5 top-1/2 -translate-y-1/2 z-20 
-            p-2 
-            rounded-full
-            bg-transparent 
-            border-none
-            shadow-[0_0_12px_#7a3cff80]
-            hover:shadow-[0_0_20px_#7a3cffcc]
-            transition-all duration-300
+            absolute left-7 bottom-88 -translate-y-1/2 z-20
+            bg-transparent border-none
+            cursor-pointer select-none
           "
+          whileHover={{ scale: 1.3, x: -4 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 250, damping: 18 }}
         >
-          <FiChevronLeft className="text-white text-4xl drop-shadow-[0_0_8px_#7a3cff]" />
+          <FiChevronLeft className="text-white text-4xl drop-shadow-[0_0_18px_#7a3cff]" />
         </motion.button>
       )}
 
-      {/* ==== RIGHT ARROW ==== */}
+      {/* RIGHT ARROW */}
       {canScrollRight && (
         <motion.button
           onClick={scrollRight}
-          initial={{ opacity: 0, scale: 0.6 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
           className="
-            absolute right-5 top-1/2 -translate-y-1/2 z-20 
-            p-2 
-            rounded-full
-            bg-transparent 
-            border-none
-            shadow-[0_0_12px_#7a3cff80]
-            hover:shadow-[0_0_20px_#7a3cffcc]
-            transition-all duration-300
+            absolute right-7 bottom-88 -translate-y-1/2 z-20
+            bg-transparent border-none
+            cursor-pointer select-none
           "
+          whileHover={{ scale: 1.3, x: 4 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 250, damping: 18 }}
         >
-          <FiChevronRight className="text-white text-4xl drop-shadow-[0_0_8px_#7a3cff]" />
+          <FiChevronRight className="text-white text-4xl drop-shadow-[0_0_18px_#7a3cff]" />
         </motion.button>
       )}
+
 
       {/* ===== CAROUSEL LIST ===== */}
       <div
         ref={scrollRef}
         className="w-full flex gap-10 overflow-x-auto px-4 pb-6 scrollbar-hide scroll-smooth"
-        style={{ scrollbarWidth: "none" }}
+         style={{
+          scrollbarWidth: "none",
+          maskImage: "linear-gradient(to right, transparent 0%, black 5%, black 97%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 5%, black 97%, transparent 100%)",
+        }}
       >
 
         {/* === LOGO === */}
@@ -136,9 +150,24 @@ export default function Section4() {
             loop
           />
           <p className="text-white font-semibold mt-3">Logo</p>
-          <button className="mt-1 text-sm px-4 py-1 rounded-lg bg-[#7a3cff] text-white hover:bg-[#602bd8]">
-            View
-          </button>
+          <a
+            href="#"
+            className="
+              inline-flex items-center justify-center
+              rounded-full px-10 py-2 my-2
+              text-sm font-semibold text-white
+              border border-[#7a3cff]
+              shadow-[0_0_12px_#7a3cff80]
+              hover:shadow-[0_0_25px_#7a3cffcc]
+              transition-all duration-300
+              no-underline!
+              hover:-translate-y-[3px]
+              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
+            "
+          >
+            View 
+          </a>
+
         </div>
 
         {/* === BANNER === */}
@@ -158,9 +187,23 @@ export default function Section4() {
             pauseOnHover
           />
           <p className="text-white font-semibold mt-3">Banner</p>
-          <button className="mt-1 text-sm px-4 py-1 rounded-lg bg-[#7a3cff] text-white hover:bg-[#602bd8]">
-            View
-          </button>
+          <a
+            href="#"
+            className="
+              inline-flex items-center justify-center
+              rounded-full px-10 py-2 my-2
+              text-sm font-semibold text-white
+              border border-[#7a3cff]
+              shadow-[0_0_12px_#7a3cff80]
+              hover:shadow-[0_0_25px_#7a3cffcc]
+              transition-all duration-300
+              no-underline!
+              hover:-translate-y-[3px]
+              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
+            "
+          >
+            View 
+          </a>
         </div>
 
         {/* FLYER */}
@@ -180,9 +223,23 @@ export default function Section4() {
             pauseOnHover
           />
           <p className="text-white font-semibold mt-3">Flyer</p>
-          <button className="mt-1 text-sm px-4 py-1 rounded-lg bg-[#7a3cff] text-white hover:bg-[#602bd8]">
-            View
-          </button>
+          <a
+            href="#"
+            className="
+              inline-flex items-center justify-center
+              rounded-full px-10 py-2 my-2
+              text-sm font-semibold text-white
+              border border-[#7a3cff]
+              shadow-[0_0_12px_#7a3cff80]
+              hover:shadow-[0_0_25px_#7a3cffcc]
+              transition-all duration-300
+              no-underline!
+              hover:-translate-y-[3px]
+              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
+            "
+          >
+            View 
+          </a>
         </div>
 
         {/* STICKER */}
@@ -201,9 +258,23 @@ export default function Section4() {
             pauseOnHover
           />
           <p className="text-white font-semibold mt-3">Sticker</p>
-          <button className="mt-1 text-sm px-4 py-1 rounded-lg bg-[#7a3cff] text-white hover:bg-[#602bd8]">
-            View
-          </button>
+          <a
+            href="#"
+            className="
+              inline-flex items-center justify-center
+              rounded-full px-10 py-2 my-2
+              text-sm font-semibold text-white
+              border border-[#7a3cff]
+              shadow-[0_0_12px_#7a3cff80]
+              hover:shadow-[0_0_25px_#7a3cffcc]
+              transition-all duration-300
+              no-underline!
+              hover:-translate-y-[3px]
+              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
+            "
+          >
+            View 
+          </a>
         </div>
         <div className="flex flex-col items-center shrink-0">
           <Carousel
@@ -220,9 +291,23 @@ export default function Section4() {
             pauseOnHover
           />
           <p className="text-white font-semibold mt-3">Instagram Feeds</p>
-          <button className="mt-1 text-sm px-4 py-1 rounded-lg bg-[#7a3cff] text-white hover:bg-[#602bd8]">
-            View
-          </button>
+          <a
+            href="#"
+            className="
+              inline-flex items-center justify-center
+              rounded-full px-10 py-2 my-2
+              text-sm font-semibold text-white
+              border border-[#7a3cff]
+              shadow-[0_0_12px_#7a3cff80]
+              hover:shadow-[0_0_25px_#7a3cffcc]
+              transition-all duration-300
+              no-underline!
+              hover:-translate-y-[3px]
+              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
+            "
+          >
+            View 
+          </a>
         </div>
         <div className="flex flex-col items-center shrink-0">
           <Carousel
@@ -237,9 +322,23 @@ export default function Section4() {
             pauseOnHover
           />
           <p className="text-white font-semibold mt-3">Banner</p>
-          <button className="mt-1 text-sm px-4 py-1 rounded-lg bg-[#7a3cff] text-white hover:bg-[#602bd8]">
-            View
-          </button>
+          <a
+            href="#"
+            className="
+              inline-flex items-center justify-center
+              rounded-full px-10 py-2 my-2
+              text-sm font-semibold text-white
+              border border-[#7a3cff]
+              shadow-[0_0_12px_#7a3cff80]
+              hover:shadow-[0_0_25px_#7a3cffcc]
+              transition-all duration-300
+              no-underline!
+              hover:-translate-y-[3px]
+              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
+            "
+          >
+            View 
+          </a>
         </div>
         <div className="flex flex-col items-center shrink-0">
           <Carousel
@@ -254,9 +353,23 @@ export default function Section4() {
             pauseOnHover
           />
           <p className="text-white font-semibold mt-3">Banner</p>
-          <button className="mt-1 text-sm px-4 py-1 rounded-lg bg-[#7a3cff] text-white hover:bg-[#602bd8]">
-            View
-          </button>
+          <a
+            href="#"
+            className="
+              inline-flex items-center justify-center
+              rounded-full px-10 py-2 my-2
+              text-sm font-semibold text-white
+              border border-[#7a3cff]
+              shadow-[0_0_12px_#7a3cff80]
+              hover:shadow-[0_0_25px_#7a3cffcc]
+              transition-all duration-300
+              no-underline!
+              hover:-translate-y-[3px]
+              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
+            "
+          >
+            View 
+          </a>
         </div>
       </div>
     </div>

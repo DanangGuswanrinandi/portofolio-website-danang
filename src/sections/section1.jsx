@@ -137,7 +137,7 @@ export default function Section1() {
             
              {/* Logo Coreldraw*/}
               <img
-                src="/coreldraw.png"
+                src="src/assets/coreldraw.png"
                 className="
                   absolute top-80 right-20 w-35 opacity-80 
                   transition-all duration-300
