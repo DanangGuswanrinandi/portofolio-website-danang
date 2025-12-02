@@ -55,7 +55,7 @@ export default function Navbar() {
           rounded-full
           transition-all duration-500
           overflow-hidden
-          ${open ? "px-6 py-2 w-[90vw] max-w-7xl" : "p-2 w-14"}
+          ${open ? "px-6 py-1 w-[90vw] max-w-7xl" : "p-2 w-14"}
         `}
       >
 
@@ -72,7 +72,7 @@ export default function Navbar() {
 
         {/* — TITLE — */}
         {open && (
-          <h1 className="text-white font-semibold text-lg drop-shadow-[0_0_8px_#5e2eff]">
+          <h1 className="text-white font-semibold text-md drop-shadow-[0_0_8px_#5e2eff]">
             Danang.
           </h1>
         )}
@@ -87,7 +87,7 @@ export default function Navbar() {
                   to={item.path}
                   className={({ isActive }) =>
                     `
-                    px-4 py-2 mt-2 rounded-full text-lg font-semibold transition-all duration-300 no-underline!
+                    px-4 py-2 mt-3 rounded-full text-md font-semibold transition-all duration-300 no-underline!
                     ${
                       isActive
                         ? "bg-white text-black shadow-[0_0_12px_#ffffff90]"

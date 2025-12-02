@@ -10,18 +10,18 @@ export default function Section3() {
   return (
     <div className="h-screen flex items-center justify-center text-white relative z-10 px-10">
       <motion.div
-  initial={{ opacity: 0, scale: 0.85, filter: "blur(14px)" }}
-  whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-  viewport={{ once: true }}
-  className="
-    relative w-full max-w-[1100px] mx-auto
-    bg-white/10 backdrop-blur-2xl
-    border border-white/20 
-    rounded-3xl shadow-[0_0_40px_#00000050]
-    p-10 overflow-hidden hologram-card
-  "
->
+        initial={{ opacity: 0, scale: 0.85, filter: "blur(14px)" }}
+        whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: true }}
+        className="
+          relative w-full max-w-[1100px] mx-auto
+          bg-white/10 backdrop-blur-2xl
+          border border-white/20 
+          rounded-3xl shadow-[0_0_40px_#00000050]
+          p-10 overflow-hidden hologram-card
+        "
+      >
       
       <Container>
         {/* ===== TITLE SECTION ===== */}
@@ -228,7 +228,7 @@ export default function Section3() {
         flex justify-center items-center
         pointer-events-none
       ">
-        <button
+        <a
           onClick={() =>
             document.getElementById("section4")?.scrollIntoView({ behavior: "smooth" })
           }
@@ -258,7 +258,7 @@ export default function Section3() {
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
-        </button>
+        </a>
       </div>
 
     </div>

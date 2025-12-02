@@ -28,27 +28,27 @@ export default function Section4() {
     setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth);
   };
 
-  const handleAnimationComplete = () => {
-  console.log('Animation completed!');
+    const handleAnimationComplete = () => {
+    console.log('Animation completed!');
+  };
+
+    const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -scrollRef.current.clientWidth, // scroll penuh 1 layar
+        behavior: "smooth"
+      });
+    }
+  };
+
+const scrollRight = () => {
+  if (scrollRef.current) {
+    scrollRef.current.scrollBy({
+      left: scrollRef.current.clientWidth, // scroll penuh 1 layar
+      behavior: "smooth"
+    });
+  }
 };
-
-  const scrollLeft = () => {
-    if (itemWidth > 0) {
-      scrollRef.current.scrollBy({ 
-        left: -(itemWidth + 40), // itemWidth + gap (40px)
-        behavior: "smooth" 
-      });
-    }
-  };
-
-  const scrollRight = () => {
-    if (itemWidth > 0) {
-      scrollRef.current.scrollBy({ 
-        left: itemWidth + 40, // itemWidth + gap (40px)
-        behavior: "smooth" 
-      });
-    }
-  };
 
   useEffect(() => {
     checkScroll();
@@ -64,9 +64,83 @@ export default function Section4() {
     };
   }, []);
 
-  return (
-    <div className="min-h-screen px-20 relative bg-linear-to-b from-[#181025] via-[#2a1d41] to-[#7a54ff20] py-30">
 
+  // Data carousel
+  const carouselData = [
+    {
+      title: "Logo",
+      items: [
+        { id: 1, image: "src/assets/Mataf 25 Horizon.png" },
+        { id: 2, image: "src/assets/DFG 17 Logo CL_Horizon.png" },
+        { id: 3, image: "src/assets/Logo podcast 2.png" },
+        { id: 4, image: "src/assets/lOGO ANGSA VER.png" },
+        { id: 5, image: "src/assets/logo dfg 16.png" },
+      ],
+    },
+    {
+      title: "Banner",
+      items: [
+        { id: 1, image: "src/assets/Banner JJS CMYK rev.jpg" },
+        { id: 2, image: "src/assets/Banner digital simus.jpg" },
+        { id: 3, image: "src/assets/BG DIGITAL.jpg" },
+        { id: 4, image: "src/assets/Banner digital milad.jpg" },
+        { id: 5, image: "src/assets/Banner digitalSSSSS.jpg" },
+      ],
+    },
+    {
+      title: "Flyer",
+      items: [
+        { id: 1, image: "src/assets/pamflet desain.jpg" },
+        { id: 2, image: "src/assets/HBD Danang.jpg" },
+        { id: 3, image: "src/assets/Poster MnG.jpg" },
+        { id: 4, image: "src/assets/Pormawa story (1).jpg" },
+        { id: 5, image: "src/assets/pamflet 22.png" },
+      ],
+    },
+    {
+      title: "Sticker",
+      items: [
+        { id: 1, image: "src/assets/STICKER KI.png" },
+        { id: 2, image: "src/assets/Sticker Gresik Sumpek.png" },
+        { id: 3, image: "src/assets/Sticker DFG XVI.png" },
+        { id: 4, image: "src/assets/Sticker Mataf 1.png" },
+        { id: 5, image: "src/assets/Sticker Mataf 2.png" },
+      ],
+    },
+    {
+      title: "Instagram Feeds",
+      items: [
+        { id: 1, image: "src/assets/FEED PTI 4 COVER.jpg" },
+        { id: 2, image: "src/assets/Feed KI.jpg" },
+        { id: 3, image: "src/assets/feed 3.jpg" },
+        { id: 4, image: "src/assets/mataf h3 (2).jpg" },
+        { id: 5, image: "src/assets/Feed PV1.jpg" },
+      ],
+    },
+    {
+      title: "Instagram Feeds",
+      items: [
+        { id: 1, image: "src/assets/FEED PTI 4 COVER.jpg" },
+        { id: 2, image: "src/assets/Feed KI.jpg" },
+        { id: 3, image: "src/assets/feed 3.jpg" },
+        { id: 4, image: "src/assets/mataf h3 (2).jpg" },
+        { id: 5, image: "src/assets/Feed PV1.jpg" },
+      ],
+    },
+    {
+      title: "Instagram Feeds",
+      items: [
+        { id: 1, image: "src/assets/FEED PTI 4 COVER.jpg" },
+        { id: 2, image: "src/assets/Feed KI.jpg" },
+        { id: 3, image: "src/assets/feed 3.jpg" },
+        { id: 4, image: "src/assets/mataf h3 (2).jpg" },
+        { id: 5, image: "src/assets/Feed PV1.jpg" },
+      ],
+    },
+  ];
+
+  return (
+    <div className="min-h-screen px-20 relative bg-linear-to-b from-[#181025] via-[#2a1d41] to-[#7a54ff20] py-40">
       {/* TITLE */}
       <div className="text-center mb-5 mt-15 px-4">
         <BlurText
@@ -75,8 +149,19 @@ export default function Section4() {
           animateBy="words"
           direction="top"
           onAnimationComplete={handleAnimationComplete}
-          className="text-white fw-bold text-6xl justify-center"
+          className="text-white font-bold text-6xl justify-center"
         />
+
+        {/* HR dengan glow ungu dan animasi expand */}
+        <motion.div
+          className="mx-auto my-1 h-0.5 bg-[#7a3cff] rounded-full border-0 shadow-[0_0_20px_#7a3cff88]"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 3, ease: "easeOut" }}
+          style={{ width: "25%", transformOrigin: "center" }}
+        />
+
         <BlurText
           text="Lastest Project"
           delay={150}
@@ -92,7 +177,7 @@ export default function Section4() {
         <motion.button
           onClick={scrollLeft}
           className="
-            absolute left-7 bottom-88 -translate-y-1/2 z-20
+            absolute left-7 bottom-105 -translate-y-1/2 z-20
             bg-transparent border-none
             cursor-pointer select-none
           "
@@ -109,7 +194,7 @@ export default function Section4() {
         <motion.button
           onClick={scrollRight}
           className="
-            absolute right-7 bottom-88 -translate-y-1/2 z-20
+            absolute right-7 bottom-105 -translate-y-1/2 z-20
             bg-transparent border-none
             cursor-pointer select-none
           "
@@ -121,256 +206,70 @@ export default function Section4() {
         </motion.button>
       )}
 
-
       {/* ===== CAROUSEL LIST ===== */}
       <div
         ref={scrollRef}
         className="w-full flex gap-10 overflow-x-auto px-4 pb-6 scrollbar-hide scroll-smooth"
-         style={{
+        style={{
           scrollbarWidth: "none",
-          maskImage: "linear-gradient(to right, transparent 0%, black 5%, black 97%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 5%, black 97%, transparent 100%)",
+          maskImage:
+            "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
         }}
       >
-
-        {/* === LOGO === */}
-        <div ref={itemRef} className="flex flex-col items-center shrink-0">
-          <Carousel
-            items={[
-              { id:1, image:"src/assets/Mataf 25 Horizon.png" },
-              { id:2, image:"src/assets/DFG 17 Logo CL_Horizon.png" },
-              { id:3, image:"src/assets/Logo podcast 2.png" },
-              { id:4, image:"src/assets/lOGO ANGSA VER.png" },
-              { id:5, image:"src/assets/logo dfg 16.png" }
-            ]}
-            baseWidth={200}
-            autoplay
-            autoplayDelay={3000}
-            pauseOnHover
-            loop
-          />
-          <p className="text-white font-semibold mt-3">Logo</p>
-          <a
-            href="#"
-            className="
-              inline-flex items-center justify-center
-              rounded-full px-10 py-2 my-2
-              text-sm font-semibold text-white
-              border border-[#7a3cff]
-              shadow-[0_0_12px_#7a3cff80]
-              hover:shadow-[0_0_25px_#7a3cffcc]
-              transition-all duration-300
-              no-underline!
-              hover:-translate-y-[3px]
-              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
-            "
+        {carouselData.map((section, idx) => (
+          <motion.div
+            key={idx}
+            className="flex flex-col items-center shrink-0"
+            ref={idx === 0 ? itemRef : null} // <--- Hanya item pertama yang diberi ref
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.2 }}
           >
-            View 
-          </a>
-
-        </div>
-
-        {/* === BANNER === */}
-        
-        <div className="flex flex-col items-center shrink-0">
-          <Carousel
-            items={[
-              { id:1, image:"src/assets/Banner JJS CMYK rev.jpg" },
-              { id:2, image:"src/assets/Banner digital simus.jpg" },
-              { id:3, image:"src/assets/BG DIGITAL.jpg" },
-              { id:4, image:"src/assets/Banner digital milad.jpg" },
-              { id:5, image:"src/assets/Banner digitalSSSSS.jpg" },
-            ]}
-            baseWidth={200}
-            autoplay
-            loop
-            pauseOnHover
-          />
-          <p className="text-white font-semibold mt-3">Banner</p>
-          <a
-            href="#"
-            className="
-              inline-flex items-center justify-center
-              rounded-full px-10 py-2 my-2
-              text-sm font-semibold text-white
-              border border-[#7a3cff]
-              shadow-[0_0_12px_#7a3cff80]
-              hover:shadow-[0_0_25px_#7a3cffcc]
-              transition-all duration-300
-              no-underline!
-              hover:-translate-y-[3px]
-              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
-            "
-          >
-            View 
-          </a>
-        </div>
-
-        {/* FLYER */}
-
-        <div className="flex flex-col items-center shrink-0">
-          <Carousel
-            items={[
-              { id:1, image:"src/assets/pamflet desain.jpg" },
-              { id:2, image:"src/assets/HBD Danang.jpg" },
-              { id:3, image:"src/assets/Poster MnG.jpg" },
-              { id:4, image:"src/assets/Pormawa story (1).jpg" },
-              { id:5, image:"src/assets/pamflet 22.png" },
-            ]}
-            baseWidth={200}
-            autoplay
-            loop
-            pauseOnHover
-          />
-          <p className="text-white font-semibold mt-3">Flyer</p>
-          <a
-            href="#"
-            className="
-              inline-flex items-center justify-center
-              rounded-full px-10 py-2 my-2
-              text-sm font-semibold text-white
-              border border-[#7a3cff]
-              shadow-[0_0_12px_#7a3cff80]
-              hover:shadow-[0_0_25px_#7a3cffcc]
-              transition-all duration-300
-              no-underline!
-              hover:-translate-y-[3px]
-              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
-            "
-          >
-            View 
-          </a>
-        </div>
-
-        {/* STICKER */}
-        <div className="flex flex-col items-center shrink-0">
-          <Carousel
-            items={[
-              { id:1, image:"src/assets/STICKER KI.png" },
-              { id:2, image:"src/assets/Sticker Gresik Sumpek.png" },
-              { id:3, image:"src/assets/Sticker DFG XVI.png" },
-              { id:3, image:"src/assets/Sticker Mataf 1.png" },
-              { id:3, image:"src/assets/Sticker Mataf 2.png" },
-            ]}
-            baseWidth={200}
-            autoplay
-            loop
-            pauseOnHover
-          />
-          <p className="text-white font-semibold mt-3">Sticker</p>
-          <a
-            href="#"
-            className="
-              inline-flex items-center justify-center
-              rounded-full px-10 py-2 my-2
-              text-sm font-semibold text-white
-              border border-[#7a3cff]
-              shadow-[0_0_12px_#7a3cff80]
-              hover:shadow-[0_0_25px_#7a3cffcc]
-              transition-all duration-300
-              no-underline!
-              hover:-translate-y-[3px]
-              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
-            "
-          >
-            View 
-          </a>
-        </div>
-        <div className="flex flex-col items-center shrink-0">
-          <Carousel
-            items={[
-              { id:1, image:"src/assets/FEED PTI 4 COVER.jpg" },
-              { id:2, image:"src/assets/Feed KI.jpg" },
-              { id:3, image:"src/assets/feed 3.jpg" },
-              { id:4, image:"src/assets/mataf h3 (2).jpg" },
-              { id:5, image:"src/assets/Feed PV1.jpg" },
-            ]}
-            baseWidth={200}
-            autoplay
-            loop
-            pauseOnHover
-          />
-          <p className="text-white font-semibold mt-3">Instagram Feeds</p>
-          <a
-            href="#"
-            className="
-              inline-flex items-center justify-center
-              rounded-full px-10 py-2 my-2
-              text-sm font-semibold text-white
-              border border-[#7a3cff]
-              shadow-[0_0_12px_#7a3cff80]
-              hover:shadow-[0_0_25px_#7a3cffcc]
-              transition-all duration-300
-              no-underline!
-              hover:-translate-y-[3px]
-              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
-            "
-          >
-            View 
-          </a>
-        </div>
-        <div className="flex flex-col items-center shrink-0">
-          <Carousel
-            items={[
-              { id:1, image:"src/assets/banner1.png" },
-              { id:2, image:"src/assets/banner2.png" },
-              { id:3, image:"src/assets/banner3.png" },
-            ]}
-            baseWidth={200}
-            autoplay
-            loop
-            pauseOnHover
-          />
-          <p className="text-white font-semibold mt-3">Banner</p>
-          <a
-            href="#"
-            className="
-              inline-flex items-center justify-center
-              rounded-full px-10 py-2 my-2
-              text-sm font-semibold text-white
-              border border-[#7a3cff]
-              shadow-[0_0_12px_#7a3cff80]
-              hover:shadow-[0_0_25px_#7a3cffcc]
-              transition-all duration-300
-              no-underline!
-              hover:-translate-y-[3px]
-              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
-            "
-          >
-            View 
-          </a>
-        </div>
-        <div className="flex flex-col items-center shrink-0">
-          <Carousel
-            items={[
-              { id:1, image:"src/assets/banner1.png" },
-              { id:2, image:"src/assets/banner2.png" },
-              { id:3, image:"src/assets/banner3.png" },
-            ]}
-            baseWidth={200}
-            autoplay
-            loop
-            pauseOnHover
-          />
-          <p className="text-white font-semibold mt-3">Banner</p>
-          <a
-            href="#"
-            className="
-              inline-flex items-center justify-center
-              rounded-full px-10 py-2 my-2
-              text-sm font-semibold text-white
-              border border-[#7a3cff]
-              shadow-[0_0_12px_#7a3cff80]
-              hover:shadow-[0_0_25px_#7a3cffcc]
-              transition-all duration-300
-              no-underline!
-              hover:-translate-y-[3px]
-              active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
-            "
-          >
-            View 
-          </a>
-        </div>
+            <Carousel
+              items={section.items}
+              baseWidth={200}
+              autoplay
+              loop
+              pauseOnHover
+            />
+            <p className="text-white font-semibold mt-3">{section.title}</p>
+            <a
+              href="#"
+              className="
+                inline-flex items-center justify-center
+                rounded-full px-10 py-2 my-2
+                text-sm font-semibold text-white
+                border border-[#7a3cff]
+                shadow-[0_0_12px_#7a3cff80]
+                hover:shadow-[0_0_25px_#7a3cffcc]
+                transition-all duration-300
+                hover:-translate-y-[3px]
+                active:translate-y-px active:shadow-[0_2px_8px_rgba(122,60,255,0.5)]
+                no-underline!
+              "
+            >
+              View
+            </a>
+          </motion.div>
+        ))}
+      </div>
+      <div className="w-full relative">
+        <a
+          href="#/projects"
+          className="
+            absolute -bottom-25 left-1/2 -translate-x-1/2 inline-block text-white font-semibold text-lg
+            transition-all duration-300
+            before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5 before:bg-[#7a3cff] before:transition-all before:duration-300
+            hover:before:w-full
+            hover:text-[#7a3cff] hover:drop-shadow-[0_0_15px_#7a3cff]
+            no-underline!
+          "
+        >
+          View All My Project
+        </a>
       </div>
     </div>
   );
