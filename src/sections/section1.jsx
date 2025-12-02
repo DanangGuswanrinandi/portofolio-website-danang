@@ -6,6 +6,8 @@ import { IoCodeSlash } from "react-icons/io5";
 import { SiReact, SiAdobephotoshop, SiCoreldraw } from "react-icons/si";
 import LogoLoop from "../components/LogoLoop";
 import photoshop from "../assets/photoshop.png";
+import coreldraw from "../assets/coreldraw.png";
+import Foto from "../assets/Foto Danang.png";
 
 export default function Section1() {
   const techLogos = [
@@ -138,7 +140,7 @@ export default function Section1() {
             
              {/* Logo Coreldraw*/}
               <img
-                src="./src/assets/coreldraw.png"
+                src={coreldraw}
                 className="
                   absolute top-80 right-20 w-35 opacity-80 
                   transition-all duration-300
@@ -169,7 +171,7 @@ export default function Section1() {
                 "
               />
             <img
-              src="./src/assets/Foto Danang.png"
+              src={Foto}
               alt="Foto Saya"
               className="rounded-lg w-md-full h-auto max-h-[80vh] object-cover z-10 pointer-events-none"
             />
