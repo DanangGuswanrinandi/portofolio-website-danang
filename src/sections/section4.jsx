@@ -140,7 +140,7 @@ const scrollRight = () => {
   ];
 
   return (
-    <div className="min-h-screen px-20 relative bg-linear-to-b from-[#181025] via-[#2a1d41] to-[#7a54ff20] py-40">
+    <div className="min-h-screen px-20 relative py-40">
       {/* TITLE */}
       <div className="text-center mb-5 mt-15 px-4">
         <BlurText

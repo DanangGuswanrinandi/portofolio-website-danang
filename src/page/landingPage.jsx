@@ -3,6 +3,7 @@ import Section1 from "../sections/section1.jsx";
 import Section2 from "../sections/section2.jsx";
 import Section3 from "../sections/section3.jsx";
 import Section4 from "../sections/section4.jsx";
+import Section5 from "../sections/section5.jsx";
 export default function LandingPage() {
 
   return (
@@ -33,20 +34,17 @@ export default function LandingPage() {
       <section>
         <Section3 />
       </section>
-
+      <div className="bg-linear-to-b from-[#181025] via-[#2a1d41] to-[#7a54ff20]">
       {/* 4️⃣ Portfolio / Projects */}
       <section id="section4">
         <Section4 />
       </section>
 
       {/* 5️⃣ Testimonials */}
-      <section className="h-screen bg-blue-500 flex items-center justify-center">
-        <Row className="text-center w-full mx-0">
-          <Col>
-            <h1 className="text-5xl font-bold">Section 5 — Testimonials</h1>
-          </Col>
-        </Row>
+      <section>
+        <Section5 />
       </section>
+      </div>
 
       {/* 6️⃣ Contact / Call to Action */}
       <section className="h-screen bg-indigo-500 flex items-center justify-center">
