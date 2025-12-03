@@ -4,6 +4,8 @@ import Section2 from "../sections/section2.jsx";
 import Section3 from "../sections/section3.jsx";
 import Section4 from "../sections/section4.jsx";
 import Section5 from "../sections/section5.jsx";
+import Section6 from "../sections/section6.jsx";
+import Section7 from "../sections/section7.jsx";
 export default function LandingPage() {
 
   return (
@@ -44,24 +46,16 @@ export default function LandingPage() {
       <section>
         <Section5 />
       </section>
+      
+      {/* 6️⃣ Contact / Call to Action */}
+      <section>
+        <Section6 />
+      </section>
       </div>
 
-      {/* 6️⃣ Contact / Call to Action */}
-      <section className="h-screen bg-indigo-500 flex items-center justify-center">
-        <Row className="text-center w-full mx-0">
-          <Col>
-            <h1 className="text-5xl font-bold">Section 6 — Contact</h1>
-          </Col>
-        </Row>
-      </section>
-
       {/* 7️⃣ Footer */}
-      <section className="h-screen bg-purple-600 flex items-center justify-center">
-        <Row className="text-center w-full mx-0">
-          <Col>
-            <h1 className="text-5xl font-bold">Section 7 — Footer</h1>
-          </Col>
-        </Row>
+      <section>
+        <Section7 />
       </section>
     </Container>
     </div>
