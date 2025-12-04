@@ -111,6 +111,10 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   *:not(button):not(.no-border) {
     @apply border-border outline-ring/50;
@@ -212,6 +216,39 @@
   0% { transform: translateY(-60%); }
   100% { transform: translateY(60%); }
 }
+
+/* ===== Custom Scrollbar ===== */
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1a112b; 
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  background: rgba(122, 60, 255, 0.45);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+
+/* Hover Thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #a478ff;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7a3cff #1a112b;
+}
+
 
 
 

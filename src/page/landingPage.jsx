@@ -10,7 +10,7 @@ export default function LandingPage() {
 
   return (
     <div className="
-      relative w-full min-h-screen text-white overflow-x-hidden
+      relative w-screen min-h-screen text-white overflow-x-hidden max-w-full
       bg-linear-to-tl 
       from-[#120c1f] via-[#181025] to-[#0a0814]
     ">

@@ -12,6 +12,8 @@ const items = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const mobileMenuRef = useRef(null);
+  const desktopButtonRef = useRef(null);
+  const mobileButtonRef = useRef(null);
   const buttonRef = useRef(null);
 
   /* === CLOSE MENU WHEN CLICK OUTSIDE === */
@@ -20,7 +22,8 @@ export default function Navbar() {
       if (
         mobileMenuRef.current &&
         !mobileMenuRef.current.contains(e.target) &&
-        !buttonRef.current.contains(e.target)
+        !desktopButtonRef.current.contains(e.target) &&
+        !mobileButtonRef.current.contains(e.target)
       ) {
         setOpen(false);
       }
@@ -72,8 +75,11 @@ export default function Navbar() {
         >
           {/* BUTTON */}
           <div
-            ref={buttonRef}
-            onClick={() => setOpen(!open)}
+              ref={desktopButtonRef}
+                onClick={(e) => {
+                  e.stopPropagation(); // 🔥 cegah klik menular ke lainnya
+                  setOpen(!open);
+                }}
             className="w-10 h-10 rounded-full bg-[#5e2eff] cursor-pointer 
             flex items-center justify-center shadow-[0_0_12px_#5e2eff]
             hover:scale-110 transition-all duration-300"
@@ -96,6 +102,7 @@ export default function Navbar() {
                   <NavLink
                     key={index}
                     to={item.path}
+                    onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                       `
                       px-4 py-2 mt-3 rounded-full text-md font-semibold transition-all duration-300 no-underline!

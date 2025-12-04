@@ -205,6 +205,7 @@ export default function Section2() {
                 transition-all duration-300 
                 hover:bg-[#9146ff]
                 mt-2
+                no-underline!
               "
             >
               <span className="bg-[#2f1b47] text-white font-semibold px-6 py-2 rounded-full group-hover:bg-[#3c2760]">

@@ -110,7 +110,7 @@ export default function Section1() {
             <div className="flex items-center gap-3 pointer-events-auto order-2">
               {/* WhatsApp */}
               <a
-                href="https://wa.me/6289502892865"
+                href="https://wa.me/6289502928258"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
