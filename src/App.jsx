@@ -4,6 +4,7 @@ import LandingPage from './page/landingPage'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route, HashRouter as Router } from "react-router-dom";
 import Navbar from './components/Navbar';
+import AboutPage from './page/aboutPage';
 import LandingIntro from './components/LandingIntro';
 
 
@@ -18,6 +19,9 @@ function App() {
       {introDone && <Navbar />}
       <Routes>
         <Route path="/" element={<LandingPage />} />
+      </Routes>
+      <Routes>
+        <Route path="/about_page" element={<AboutPage />} />
       </Routes>
     </Router>
   )

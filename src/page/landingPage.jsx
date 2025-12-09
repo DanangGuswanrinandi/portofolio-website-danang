@@ -6,14 +6,37 @@ import Section4 from "../sections/section4.jsx";
 import Section5 from "../sections/section5.jsx";
 import Section6 from "../sections/section6.jsx";
 import Section7 from "../sections/section7.jsx";
+import bgMusic from "../assets/1209.mp3";
+import { useEffect } from "react";
 export default function LandingPage() {
 
+  useEffect(() => {
+    const element = document.getElementById("bgMusic"); 
+
+    const playOnScroll = () => {
+      if (element && element.paused) {
+        element.volume = 0.3;
+        element.play().catch(() => {});
+        window.removeEventListener("scroll", playOnScroll);
+      }
+    };  
+
+    window.addEventListener("scroll", playOnScroll);  
+
+    return () => {
+      window.removeEventListener("scroll", playOnScroll);
+    };
+  }, []);
+  
   return (
     <div className="
       relative w-screen min-h-screen text-white overflow-x-hidden max-w-full
       bg-linear-to-tl 
       from-[#120c1f] via-[#181025] to-[#0a0814]
     ">
+      <audio id="bgMusic" loop>
+        <source src={bgMusic} type="audio/mp3" />
+      </audio>
       
       {/* 🔥 Glow Global */}
       <div className="fixed inset-0 pointer-events-none z-0">

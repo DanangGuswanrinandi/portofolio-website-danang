@@ -34,7 +34,7 @@ export default function Section6() {
         <Row className="justify-center md:gap-0">
           <Col xs="12" md="4" className="flex justify-center mb-6 md:mb-8">
             <SpotlightCard
-              className="w-full max-w-[280px] h-[280px] md:max-w-[350px] md:h-[230px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
+              className="w-full max-w-[300px] h-[280px] md:max-w-[350px] md:h-[230px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
               spotlightColor="rgba(132, 0, 255, 0.45) "
             >
               {/* ICON */}
@@ -68,7 +68,7 @@ export default function Section6() {
 
           <Col xs="12" md="4" className="flex justify-center mb-6 md:mb-8">
             <SpotlightCard
-              className="w-full max-w-[280px] h-[280px] md:max-w-[350px] md:h-[230px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
+              className="w-full max-w-[300px] h-[280px] md:max-w-[350px] md:h-[230px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
               spotlightColor="rgba(132, 0, 255, 0.45)"
             >
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5e2eff] flex justify-center items-center mb-2 md:mb-2 shrink-0">
@@ -95,7 +95,7 @@ export default function Section6() {
 
           <Col xs="12" md="4" className="flex justify-center">
             <SpotlightCard
-              className="w-full max-w-[280px] h-[280px] md:max-w-[350px] md:h-[230px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
+              className="w-full max-w-[300px] h-[280px] md:max-w-[350px] md:h-[230px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
               spotlightColor="rgba(132, 0, 255, 0.45)"
             >
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5e2eff] flex justify-center items-center mb-2 md:mb-2 shrink-0">
