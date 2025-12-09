@@ -31,14 +31,14 @@ export default function Section6() {
         </Row>
 
         {/* ===== CARD SECTION ===== */}
-        <Row className="justify-center gap-6 md:gap-0">
+        <Row className="justify-center gap-1 md:gap-0">
           <Col xs="12" md="4" className="flex justify-center mb-6 md:mb-8">
             <SpotlightCard
-              className="w-full max-w-[350px] h-[230px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
+              className="w-full max-w-[280px] h-[230px] md:max-w-[350px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
               spotlightColor="rgba(132, 0, 255, 0.45) "
             >
               {/* ICON */}
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#9260FF] flex justify-center items-center mb-3 md:mb-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5e2eff] flex justify-center items-center mb-2 md:mb-2 shrink-0">
                 <RiFilePaperFill className="text-white text-xl md:text-2xl" />
               </div>
 
@@ -47,7 +47,7 @@ export default function Section6() {
 
               {/* DESCRIPTION */}
               <p className="text-white/60 text-xs md:text-sm leading-snug mb-3 md:mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                Membantu kebutuhan promosi bisnismu melalui desain flyer yang kreatif, informatif, dan sesuai identitas brand agar pesanmu tersampaikan dengan efektif
               </p>
 
               {/* LEARN MORE */}
@@ -68,15 +68,15 @@ export default function Section6() {
 
           <Col xs="12" md="4" className="flex justify-center mb-6 md:mb-8">
             <SpotlightCard
-              className="w-full max-w-[350px] h-[230px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
+              className="w-full max-w-[280px] h-[230px] md:max-w-[350px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
               spotlightColor="rgba(132, 0, 255, 0.45)"
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#9260FF] flex justify-center items-center mb-3 md:mb-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5e2eff] flex justify-center items-center mb-2 md:mb-2 shrink-0">
                 <IoIosBrowsers className="text-white text-xl md:text-2xl" />
               </div>
               <h2 className="text-white font-semibold text-lg md:text-xl mb-1">Sosial Media</h2>
               <p className="text-white/60 text-xs md:text-sm leading-snug mb-3 md:mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                Menyediakan layanan desain konten sosial media seperti Feed Instagram dan Story Instagram, dengan visual yang konsisten dan sesuai brand untuk meningkatkan kepercayaan serta daya tarik audiens.
               </p>
               <a
                 href="#"
@@ -95,15 +95,15 @@ export default function Section6() {
 
           <Col xs="12" md="4" className="flex justify-center">
             <SpotlightCard
-              className="w-full max-w-[350px] h-[230px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
+              className="w-full max-w-[280px] h-[230px] md:max-w-[350px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
               spotlightColor="rgba(132, 0, 255, 0.45)"
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#9260FF] flex justify-center items-center mb-3 md:mb-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5e2eff] flex justify-center items-center mb-2 md:mb-2 shrink-0">
                 <PiDribbbleLogoFill className="text-white text-xl md:text-2xl" />
               </div>
               <h2 className="text-white font-semibold text-lg md:text-xl mb-1">Logo</h2>
               <p className="text-white/60 text-xs md:text-sm leading-snug mb-3 md:mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                Menciptakan desain logo yang kuat dan mudah dikenali untuk membangun identitas brand yang profesional dan berkesan.
               </p>
               <a
                 href="#"

@@ -6,22 +6,18 @@ export default function LandingIntro({ onFinish }) {
   const [collapse, setCollapse] = useState(false);
 
   useEffect(() => {
-    // Tahap 1: tampil dulu
-    setTimeout(() => setCollapse(true), 1500); // 1.5 detik → mulai collapse
-
-    // Tahap 2: exit setelah collapse selesai
+    setTimeout(() => setCollapse(true), 1500);
     setTimeout(() => {
       setShow(false);
       setTimeout(onFinish, 500);
     }, 2500);
-
   }, []);
 
   return (
     <AnimatePresence>
       {show && (
         <motion.div
-          className="fixed inset-0 bg-[#5e2eff] z-9999 flex items-center justify-center"
+          className="fixed inset-0 bg-[#5e2eff] z-9999 flex flex-col items-center justify-center"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.6 } }}
@@ -45,8 +41,8 @@ export default function LandingIntro({ onFinish }) {
               }
             }}
             exit={{
-              x: 0,   // geser ke kiri navbar-mu
-              y: -450,   // geser ke atas navbar-mu
+              x: 0,
+              y: -450,
               scale: 0.6,
               opacity: 0,
               transition: { duration: 0.8, ease: "easeInOut" }
@@ -63,18 +59,52 @@ export default function LandingIntro({ onFinish }) {
               <span className="text-white font-bold text-3xl">D</span>
             </div>
 
-            {/* TEKS hilang saat collapse */}
-            {!collapse && (
-              <motion.h1
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                className="text-white text-3xl font-bold tracking-wide"
-              >
-                Danang
-              </motion.h1>
-            )}
+            {/* TEKS Danang dengan AnimatePresence agar exit smooth */}
+              <AnimatePresence>
+                {!collapse && (
+                  <motion.h1
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{
+                      opacity: 0,
+                      x: -20,
+                      y: -5,
+                      transition: { duration: 0.4, ease: "easeOut" }
+                    }}
+                    className="text-white text-4xl fw-bold tracking-wide pt-2"
+                  >
+                    Danang
+                  </motion.h1>
+                )}
+              </AnimatePresence>
           </motion.div>
+
+          {/* ⚠️ TEXT — Typing Dots Animation */}
+          {!collapse && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0, transition: { delay: 0.4 } }}
+              exit={{ opacity: 0 }}
+              className="mt-6 text-white/90 text-sm font-medium tracking-wide flex items-center"
+            >
+              <span>Use Desktop for Better Experience</span>
+          
+              {/* Dots Animation */}
+              <motion.span
+                className="inline-block ml-1"
+                variants={{
+                  animate: {
+                    opacity: [0, 1, 0],
+                    transition: { repeat: Infinity, duration: 1.2 }
+                  }
+                }}
+                animate="animate"
+              >
+                ...
+              </motion.span>
+            </motion.div>
+          )}
+
         </motion.div>
       )}
     </AnimatePresence>

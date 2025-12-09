@@ -89,7 +89,7 @@ export default function Navbar() {
 
           {/* TITLE */}
           {open && (
-            <h1 className="text-white font-semibold text-md drop-shadow-[0_0_8px_#5e2eff]">
+            <h1 className="text-white fw-semibold text-md drop-shadow-[0_0_8px_#5e2eff]">
               Danang.
             </h1>
           )}
@@ -102,7 +102,6 @@ export default function Navbar() {
                   <NavLink
                     key={index}
                     to={item.path}
-                    onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                       `
                       px-4 py-2 mt-3 rounded-full text-md font-semibold transition-all duration-300 no-underline!
@@ -191,7 +190,6 @@ export default function Navbar() {
                 <NavLink
                   key={index}
                   to={item.path}
-                  onClick={() => setOpen(false)}
                   className={({ isActive }) =>
                     `
                       block w-full text-center mr-6 py-2 rounded-lg text-md font-medium no-underline!
