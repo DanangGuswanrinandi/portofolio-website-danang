@@ -31,7 +31,7 @@ export default function Section6() {
         </Row>
 
         {/* ===== CARD SECTION ===== */}
-        <Row className="justify-center gap-1 md:gap-0">
+        <Row className="justify-center md:gap-0">
           <Col xs="12" md="4" className="flex justify-center mb-6 md:mb-8">
             <SpotlightCard
               className="w-full max-w-[280px] h-[230px] md:max-w-[350px] flex flex-col justify-center px-4 md:px-6 gap-2.5"
