@@ -26,106 +26,106 @@ export default function Section2() {
               mb-10 md:mb-0
             "
           >
-           <motion.div
-  initial={{ opacity: 0, scale: 0.8, y: 60 }}
-  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  viewport={{ once: true, amount: 0.3 }}
-  className="w-full flex justify-center mt-10 md:mt-0"
->
-  {/* === NEON FLOW STRIP CARD === */}
-  <div className="neon-flow-card w-[250px] md:w-[500px] rounded-2xl overflow-hidden relative p-[3px]">
-    <img
-      src={Foto2}
-      alt="About Me Foto"
-      className="
-        w-[300px] h-[200px]
-        md:w-[500px] md:h-[300px]
-        rounded-2xl object-cover
-      "
-    />
-  </div>
-
-  {/* === CSS EFFECT === */}
-  <style>{`
-.neon-flow-card {
-  position: relative;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 6px;
-  box-shadow:
-    0 0 25px rgba(122, 60, 255, 0.5),
-    inset 0 0 20px rgba(122, 60, 255, 0.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  overflow: hidden;
-}
-
-/* ✨ Snake Flow (Searah / Mengekor) */
-.neon-flow-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 6px;
-  border-radius: inherit;
-  
-  /* Gradient dengan 3 warna yang lebih smooth untuk efek snake */
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    transparent 20%,
-    rgba(122, 60, 255, 0.8) 30%,
-    rgba(122, 60, 255, 1) 50%,
-    rgba(122, 60, 255, 0.8) 70%,
-    transparent 80%,
-    transparent 100%
-  );
-  background-size: 300% 100%; /* Lebih panjang untuk efek trail */
-  animation: snakeFlow 4s linear infinite;
-
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: xor;
-}
-
-@keyframes snakeFlow {
-  0% { background-position: 150% 0; }
-  100% { background-position: -150% 0; }
-}
-
-/* Versi alternatif dengan multiple stripes (efek konvoi) */
-.neon-flow-card.alternative::before {
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    transparent 15%,
-    rgba(122, 60, 255, 0.6) 20%,
-    rgba(122, 60, 255, 1) 25%,
-    rgba(122, 60, 255, 0.6) 30%,
-    transparent 35%,
-    transparent 40%,
-    rgba(122, 60, 255, 0.4) 45%,
-    rgba(122, 60, 255, 0.8) 50%,
-    rgba(122, 60, 255, 0.4) 55%,
-    transparent 60%,
-    transparent 100%
-  );
-  background-size: 400% 100%;
-  animation: snakeFlow 6s linear infinite;
-}
-
-/* Hover effect tetap */
-.neon-flow-card:hover {
-  box-shadow:
-    0 0 40px rgba(122, 60, 255, 1),
-    inset 0 0 40px rgba(122, 60, 255, 0.3);
-  transition: 0.3s ease-out;
-}
-`}</style>
-
-</motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 60 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="w-full flex justify-center mt-10 md:mt-0"
+          >
+            {/* === NEON FLOW STRIP CARD === */}
+            <div className="neon-flow-card w-[250px] md:w-[500px] rounded-2xl overflow-hidden relative p-[3px]">
+              <img
+                src={Foto2}
+                alt="About Me Foto"
+                className="
+                  w-[300px] h-[200px]
+                  md:w-[500px] md:h-[300px]
+                  rounded-2xl object-cover
+                "
+              />
+            </div>
+            
+            {/* === CSS EFFECT === */}
+            <style>{`
+          .neon-flow-card {
+            position: relative;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px;
+            box-shadow:
+              0 0 25px rgba(122, 60, 255, 0.5),
+              inset 0 0 20px rgba(122, 60, 255, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            overflow: hidden;
+          }
+            
+          /* ✨ Snake Flow (Searah / Mengekor) */
+          .neon-flow-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            padding: 6px;
+            border-radius: inherit;
+            
+            /* Gradient dengan 3 warna yang lebih smooth untuk efek snake */
+            background: linear-gradient(
+              120deg,
+              transparent 0%,
+              transparent 20%,
+              rgba(122, 60, 255, 0.8) 30%,
+              rgba(122, 60, 255, 1) 50%,
+              rgba(122, 60, 255, 0.8) 70%,
+              transparent 80%,
+              transparent 100%
+            );
+            background-size: 300% 100%; /* Lebih panjang untuk efek trail */
+            animation: snakeFlow 4s linear infinite;
+            
+            mask:
+              linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+          }
+            
+          @keyframes snakeFlow {
+            0% { background-position: 150% 0; }
+            100% { background-position: -150% 0; }
+          }
+            
+          /* Versi alternatif dengan multiple stripes (efek konvoi) */
+          .neon-flow-card.alternative::before {
+            background: linear-gradient(
+              120deg,
+              transparent 0%,
+              transparent 15%,
+              rgba(122, 60, 255, 0.6) 20%,
+              rgba(122, 60, 255, 1) 25%,
+              rgba(122, 60, 255, 0.6) 30%,
+              transparent 35%,
+              transparent 40%,
+              rgba(122, 60, 255, 0.4) 45%,
+              rgba(122, 60, 255, 0.8) 50%,
+              rgba(122, 60, 255, 0.4) 55%,
+              transparent 60%,
+              transparent 100%
+            );
+            background-size: 400% 100%;
+            animation: snakeFlow 6s linear infinite;
+          }
+            
+          /* Hover effect tetap */
+          .neon-flow-card:hover {
+            box-shadow:
+              0 0 40px rgba(122, 60, 255, 1),
+              inset 0 0 40px rgba(122, 60, 255, 0.3);
+            transition: 0.3s ease-out;
+          }
+          `}</style>
+          
+          </motion.div>
 
           </Col>
 
